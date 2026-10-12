@@ -1,3 +1,17 @@
+# Dependencies
 node_modules/
-package-lock.json
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Build files
 dist/
+
+# Uploaded files (user content)
+uploads/
+
+# Logs
+*.log
+npm-debug.log*
