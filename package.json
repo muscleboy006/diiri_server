@@ -1,0 +1,22 @@
+{
+  "name": "loyihahozircha",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "compression": "^1.8.2",
+    "dotenv": "^18.0.6",
+    "express": "^5.2.1",
+    "grammy": "^1.46.0",
+    "mongodb": "^7.7.0",
+    "multer": "^2.4.0",
+    "node-telegram-bot-api": "^2.1.0",
+    "pg": "^8.23.1"
+  }
+}
