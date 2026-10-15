@@ -4,6 +4,7 @@ require("dotenv").config({ path: path.join(__dirname, ".env") });
 const express = require("express");
 const { initDb } = require("./db");
 const compression = require("compression");
+const cors = require("cors");
 
 
 const TOKEN = process.env.BOT_TOKEN;
@@ -15,13 +16,20 @@ if (!TOKEN || !process.env.DATABASE_URL) {
 }
 
 const app = express();
+
+app.use(cors({
+  origin: "https://diiri-client.vercel.app",
+  allowedHeaders: ["Content-Type", "Authorization"],
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+}));
+
+
 app.use(compression());
 app.use(express.json());
 
 app.use("/api/me", require("./routes/me"));
 app.use("/api/chats", require("./routes/chats"));
 app.use("/api/omonat", require("./routes/omonat"));
-// app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(
   "/uploads",
   express.static(path.join(__dirname, "uploads"), {
