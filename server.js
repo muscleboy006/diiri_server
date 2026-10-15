@@ -18,7 +18,7 @@ if (!TOKEN || !process.env.DATABASE_URL) {
 const app = express();
 
 app.use(cors({
-  origin: "https://diiri-client.vercel.app",
+  origin: ["https://diiri-client.vercel.app", "http://localhost:5173"],
   allowedHeaders: ["Content-Type", "Authorization"],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
 }));
